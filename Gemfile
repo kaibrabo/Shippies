@@ -40,6 +40,9 @@ gem 'thor', '0.19.1'
 # Bootstrap Sass
 gem 'bootstrap-sass'
 
+# pry-rails
+gem 'pry-rails', :group => :development
+
 group :development do
     gem 'listen', '~> 3.0.5'
 end
