@@ -43,6 +43,9 @@ gem 'bootstrap-sass'
 # pry-rails
 gem 'pry-rails', :group => :development
 
+# Used for Encrypting passwords
+gem 'bcrypt'
+
 group :development do
     gem 'listen', '~> 3.0.5'
 end
