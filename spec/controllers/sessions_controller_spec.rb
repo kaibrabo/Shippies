@@ -43,19 +43,19 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     describe "DELETE sessions/id" do
-        # it "render the #welcome view" do
-        #     delete :destroy, params: { id: my_user.id }
-        #     expect(response).to redirect_to root_path
-        # end
-        #
-        # it "deletes the user's session" do
-        #     delete :destroy, params: { id: my_user.id }
-        #     expect(assigns(:session)).to be_nil
-        # end
-        #
-        # it "flashes #notice" do
-        #     delete :destroy, params: { id: my_user.id }
-        #     expect(flash[:notice]).to be_present
-        # end
+        it "render the #welcome view" do
+            delete :destroy, params: { id: my_user.id }
+            expect(response).to redirect_to root_path
+        end
+
+        it "deletes the user's session" do
+            delete :destroy, params: { id: my_user.id }
+            expect(assigns(:session)).to be_nil
+        end
+
+        it "flashes #notice" do
+            delete :destroy, params: { id: my_user.id }
+            expect(flash[:notice]).to be_present
+        end
     end
 end
