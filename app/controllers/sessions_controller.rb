@@ -18,8 +18,23 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        destroy_session(current_user)
+        user = User.find_by(id: params[:id])
+        destroy_session(user)
         flash[:notice] = "You've been signed out, come back soon!"
         redirect_to root_path
     end
+
 end
+
+
+# def destroy
+#     @topic = Topic.find(params[:id])
+#
+#     if @topic.destroy
+#         flash[:notice] = "\"#{@topic.name}\" was deleted successfully."
+#         redirect_to action: :index
+#     else
+#         flash.now[:alert] = "There was an error deleting the topic."
+#         render :show
+#     end
+# end
