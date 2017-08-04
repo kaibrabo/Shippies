@@ -184,11 +184,6 @@ RSpec.describe TopicsController, type: :controller do
       end
 
         describe "GET new" do
-            it "returns http success" do
-                get :new
-                expect(response).to have_http_status(:success)
-            end
-
             it "returns http redirect" do
                 get :new
                 expect(response).to redirect_to(topics_path)
