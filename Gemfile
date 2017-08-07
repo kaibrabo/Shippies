@@ -47,6 +47,9 @@ gem 'pry-rails', :group => :development
 # Used for Encrypting passwords
 gem 'bcrypt'
 
+# figaro
+gem 'figaro', '1.0'
+
 group :development do
     gem 'listen', '~> 3.0.5'
 end
