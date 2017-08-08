@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-        user = User.find_by(id: params[:id])
-        destroy_session(user)
+        # user = User.find_by(id: params[:id])
+        destroy_session(current_user)
         flash[:notice] = "You've been signed out, come back soon!"
         redirect_to root_path
     end
