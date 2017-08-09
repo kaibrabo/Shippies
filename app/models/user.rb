@@ -16,9 +16,9 @@ class User < ApplicationRecord
 
     validates :password, length: { minimum: 6 }, allow_blank: true
     validates :email,
-              presence: true,
-              uniqueness: { case_sensitive: false },
-              length: { minimum: 3, maximum: 254 }
+    presence: true,
+    uniqueness: { case_sensitive: false },
+    length: { minimum: 3, maximum: 254 }
 
     has_secure_password
 
@@ -42,4 +42,15 @@ class User < ApplicationRecord
     def favorite_for(post)
         favorites.where(post_id: post.id).first
     end
+
+    def avatar_url(size)
+        if self.email == nil
+            gravatar_id = "0"
+        else
+            gravatar_id = Digest::MD5::hexdigest(self.email).downcase
+        end
+
+        "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+    end
+
 end

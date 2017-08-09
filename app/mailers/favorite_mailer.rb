@@ -10,7 +10,7 @@ class FavoriteMailer < ApplicationMailer
         @post = post
         @comment = comment
 
-        mail(to: user.email, bcc: ["kaibrabo@gmail.com", "henry.nguyen@bloc.io"], subject: "New comment on #{post.title}")
+        mail(to: @user.email, bcc: ["kaibrabo@gmail.com", "henry.nguyen@bloc.io"], subject: "New comment on #{post.title}")
     end
 
     def new_post(post)
@@ -19,7 +19,7 @@ class FavoriteMailer < ApplicationMailer
         headers["References"] = "<post/#{post.id}@your-app-name.example>"
 
         @post = post
-        mail(to: post.user.email, subject: "You're following, #{post.title}")
+        mail(to: @post.user.email, subject: "You're following, #{post.title}")
     end
 
 end
