@@ -27,6 +27,6 @@ Run the project on  your local server
 in your browser
 
 
-  The app is now live on [Heroku](https://wiki-waki.herokuapp.com/), and you can read more about it at my [blog](http://kaibrabo.com).
+  You can read more about it at my [blog](http://kaibrabo.com).
 
  Made by Kainoa Brabo with my mentor Henry Nguyen at [Bloc](http://bloc.io).
